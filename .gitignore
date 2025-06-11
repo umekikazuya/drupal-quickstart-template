@@ -1,0 +1,71 @@
+# Created by https://www.toptal.com/developers/gitignore/api/drupal
+# Edit at https://www.toptal.com/developers/gitignore?templates=drupal
+
+### Drupal ###
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+# follows official upstream conventions:
+# https://www.drupal.org/docs/develop/using-composer
+
+# Ignore configuration files that may contain sensitive information
+app/web/sites/*/*settings*.php
+app/web/sites/*/*services*.yml
+
+# Ignore paths that may contain user-generated content
+app/web/sites/*/files
+app/web/sites/*/public
+app/web/sites/*/private
+app/web/sites/*/files-public
+app/web/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+app/web/sites/*/translations
+app/web/sites/*/tmp
+app/web/sites/*/cache
+
+# Ignore drupal core (if not versioning drupal sources)
+app/web/vendor
+app/web/core
+app/web/modules/README.txt
+app/web/profiles/README.txt
+app/web/sites/development.services.yml
+app/web/sites/example.settings.local.php
+app/web/sites/example.sites.php
+app/web/sites/README.txt
+app/web/themes/README.txt
+app/web/.csslintrc
+app/web/.editorconfig
+app/web/.eslintignore
+app/web/.eslintrc.json
+app/web/.gitattributes
+app/web/.htaccess
+app/web/.ht.router.php
+app/web/autoload.php
+app/web/composer.json
+app/web/composer.lock
+app/web/example.gitignore
+app/web/index.php
+app/web/INSTALL.txt
+app/web/LICENSE.txt
+app/web/README.txt
+app/web/robots.txt
+app/web/update.php
+app/web/web.config
+
+# Ignore vendor dependencies and scripts
+app/vendor
+/composer.phar
+/composer
+/robo.phar
+/robo
+/drush.phar
+/drush
+/drupal.phar
+/drupal
+
+# End of https://www.toptal.com/developers/gitignore/api/drupal
+
+# .env
+.env
+.env.local

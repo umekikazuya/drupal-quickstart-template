@@ -1,0 +1,23 @@
+services:
+  drupal-quickstart-app:
+    image: drupal:latest
+    ports:
+      - ${APP_PORT}:80
+    volumes:
+      - ./app:/opt/drupal
+    working_dir: /opt/drupal
+    environment:
+      - PHP_MEMORY_LIMIT=512M
+    depends_on:
+      - drupal-quickstart-db
+  drupal-quickstart-db:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+    volumes:
+      - drupal-quickstart-db:/var/lib/mysql
+volumes:
+  drupal-quickstart-db:
