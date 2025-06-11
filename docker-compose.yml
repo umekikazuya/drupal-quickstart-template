@@ -5,9 +5,8 @@ services:
       - ${APP_PORT}:80
     volumes:
       - ./app:/opt/drupal
+      - ./scripts/php-memory-limit.ini:/usr/local/etc/php/conf.d/php-memory-limit.ini
     working_dir: /opt/drupal
-    environment:
-      - PHP_MEMORY_LIMIT=512M
     depends_on:
       - drupal-quickstart-db
   drupal-quickstart-db:

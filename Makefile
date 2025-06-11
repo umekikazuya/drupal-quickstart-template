@@ -5,7 +5,8 @@ init:
 	cd app && composer require drush/drush
 	bash scripts/env-setup.sh
 	docker-compose up -d
-	bash scripts/site-install.sh
+	docker-compose exec drupal-quickstart-app vendor/bin/drush --version
+	bash -i scripts/site-install.sh
 	@echo "[Success] Drupalのセットアップが完了しました。ブラウザで以下のURLにアクセスしてください:"
 	make app-url
 
