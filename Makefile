@@ -9,6 +9,9 @@ init:
 	bash -i scripts/site-install.sh
 	@echo "[Success] Drupalのセットアップが完了しました。ブラウザで以下のURLにアクセスしてください:"
 	make app-url
+	@echo "--- ログイン情報 ---"
+	@echo "ユーザー名: admin"
+	@echo "パスワード: admin"
 
 app-url:
 	@echo "http://localhost:$(shell grep '^APP_PORT=' .env | cut -d '=' -f2)"
